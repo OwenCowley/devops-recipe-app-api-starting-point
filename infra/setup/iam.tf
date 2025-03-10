@@ -36,7 +36,9 @@ data "aws_iam_policy_document" "tf_backend" {
       "dynamodb:DescribeTable",
       "dynamodb:GetItem",
       "dynamodb:PutItem",
-      "dynamodb:DeleteItem"
+      "dynamodb:DeleteItem",
+      "dynamodb:UpdateItem",
+      "dynamodb:Scan"
     ]
     resources = ["arn:aws:dynamodb:*:*:table/${var.tf_state_lock_table}"]
   }
