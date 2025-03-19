@@ -134,7 +134,7 @@ resource "aws_vpc_endpoint" "ecr" {
   security_group_ids  = [aws_security_group.endpoint_access.id]
 
   tags = {
-    Name = "{local.prefix}-ecr-endpoint"
+    Name = "${local.prefix}-ecr-endpoint"
   }
 }
 
@@ -147,7 +147,7 @@ resource "aws_vpc_endpoint" "dkr" {
   security_group_ids  = [aws_security_group.endpoint_access.id]
 
   tags = {
-    Name = "{local.prefix}-dkr-endpoint"
+    Name = "${local.prefix}-dkr-endpoint"
   }
 }
 
@@ -160,7 +160,7 @@ resource "aws_vpc_endpoint" "cloudwatch_logs" {
   security_group_ids  = [aws_security_group.endpoint_access.id]
 
   tags = {
-    Name = "{local.prefix}-cloudwatch-endpoint"
+    Name = "${local.prefix}-cloudwatch-endpoint"
   }
 }
 
@@ -173,7 +173,7 @@ resource "aws_vpc_endpoint" "ssm" {
   security_group_ids  = [aws_security_group.endpoint_access.id]
 
   tags = {
-    Name = "{local.prefix}-ssmmessages-endpoint"
+    Name = "${local.prefix}-ssmmessages-endpoint"
   }
 }
 
@@ -182,7 +182,7 @@ resource "aws_vpc_endpoint" "s3" {
   service_name        = "com.amazonaws.com.${data.aws_region.current.name}.s3"
   vpc_endpoint_type   = "Gateway"
   route_table_ids     = [aws_vpc.main.default_route_table_id]
-  
+
   tags = {
     Name = "${local.prefix}-s3-endpoint"
   }
