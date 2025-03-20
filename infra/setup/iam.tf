@@ -173,7 +173,8 @@ data "aws_iam_policy_document" "rds" {
       "rds:DescribeDBClusters",
       "rds:CreateDBCluster",
       "rds:DeleteDBCluster",
-      "rds:ModifyDBCluster"
+      "rds:ModifyDBCluster",
+      "rds:ModifyDBSubnetGroup"
     ]
     resources = ["*"]
   }
