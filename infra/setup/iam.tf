@@ -123,6 +123,7 @@ data "aws_iam_policy_document" "ec2" {
       "ec2:DescribeSubnets",
       "ec2:DescribeVpcAttribute",
       "ec2:DescribeNetworkAcls",
+      "ec2:DescribeAvailabilityZones",
       "ec2:AssociateRouteTable",
       "ec2:AuthorizeSecurityGroupIngress",
       "ec2:RevokeSecurityGroupEgress",
@@ -174,7 +175,8 @@ data "aws_iam_policy_document" "rds" {
       "rds:CreateDBCluster",
       "rds:DeleteDBCluster",
       "rds:ModifyDBCluster",
-      "rds:ModifyDBSubnetGroup"
+      "rds:ModifyDBSubnetGroup",
+      "rds:*"
     ]
     resources = ["*"]
   }
