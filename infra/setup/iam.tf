@@ -178,6 +178,14 @@ data "aws_iam_policy_document" "rds" {
     ]
     resources = ["*"]
   }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "iam:CreateServiceLinkedRole"
+    ]
+    resources = ["*"]
+  }
 }
 
 resource "aws_iam_policy" "rds" {
